@@ -38,12 +38,12 @@ You write a task in Notion. AURA reads it, understands it, creates a full projec
   📝 NOTION                    🧠 AURA MCP                     📁 FILESYSTEM
  ┌─────────────┐            ┌──────────────────┐            ┌──────────────┐
  │             │   read     │                  │   write    │              │
- │  Task:      │ ─────────► │  Interpret task   │ ─────────► │  Real files  │
- │  "Build a   │            │  Validate plan    │            │  Real code   │
- │   React     │            │  Scaffold project │            │  Real project│
- │   app"      │            │                  │            │              │
- │             │ ◄───────── │  Write results    │            │              │
- │  ✅ Done    │   update   │  back to Notion   │            │              │
+ │  Task:      │ ─────────► │  Interpret task  │ ─────────► │  Real files  │
+ │  "Build a   │            │  Validate plan   │            │  Real code   │
+ │   React     │            │  Scaffold project│            │  Real project│
+ │   app"      │            │                  │            |              │
+ │             │ ◄───────── │  Write results   │            │              │
+ │  ✅ Done    │   update  │  back to Notion  │            │              │
  └─────────────┘            └──────────────────┘            └──────────────┘
 ```
 
@@ -262,7 +262,5 @@ The LLM is **never trusted blindly**. Every response is validated before executi
 <div align="center">
 
 **Built for the [Notion MCP Hackathon](https://notion.so) 🏆**
-
-Made with 🧠 by AURA
 
 </div>
