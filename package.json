@@ -1,0 +1,24 @@
+{
+  "name": "aura-mcp",
+  "version": "0.1.0",
+  "description": "Autonomous Unified Resource Architect — an MCP server that reads Notion tasks and executes them",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node test/notion.test.js",
+    "mcp": "node src/mcp/server.js"
+  },
+  "keywords": [
+    "notion",
+    "mcp",
+    "automation",
+    "scaffolding"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "@notionhq/client": "^2.2.0",
+    "dotenv": "^16.4.0",
+    "openai": "^6.32.0",
+    "zod": "^4.3.6"
+  }
+}
