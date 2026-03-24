@@ -1,167 +1,268 @@
-# AURA MCP
+<div align="center">
 
-> *"Write it in Notion. AURA builds it."*
+# ✨ AURA MCP
 
-**AURA** (Autonomous Unified Resource Architect) is an MCP server that reads tasks from a Notion database, interprets them using AI, scaffolds real projects on your machine, and reports results back to Notion.
+### Autonomous Unified Resource Architect
 
-Notion becomes your command center — not just for planning, but for execution.
+**Write it in Notion. AURA builds it.**
+
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Notion](https://img.shields.io/badge/Notion-API-000000?style=for-the-badge&logo=notion&logoColor=white)](https://developers.notion.com/)
+[![MCP](https://img.shields.io/badge/MCP-Compatible-8B5CF6?style=for-the-badge)](https://modelcontextprotocol.io/)
+[![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
+
+<br />
+
+<img src="https://img.shields.io/badge/Status-Hackathon%20MVP-FF6B6B?style=flat-square" />
 
 ---
 
-## How It Works
+*An MCP server that reads tasks from Notion, interprets them with AI,*
+*scaffolds real projects on your machine, and reports results back — automatically.*
+
+</div>
+
+<br />
+
+## 🎯 What is AURA?
+
+> Most AI tools give you text. AURA gives you **real projects.**
+
+You write a task in Notion. AURA reads it, understands it, creates a full project with real code on your filesystem, and updates Notion with the results. No copy-pasting. No boilerplate. Just intent in, execution out.
+
+<br />
+
+## ⚡ How It Works
 
 ```
-┌──────────────┐       ┌──────────────────────────────┐       ┌──────────────┐
-│    NOTION    │       │         AURA MCP SERVER       │       │  FILESYSTEM  │
-│              │ read  │                               │ write │              │
-│ Task:Pending ├──────►│ Interpret → Validate → Build  ├──────►│ Real project │
-│              │       │                               │       │ with code    │
-│ Task:Done ✅ │◄──────┤ Status + summary writeback    │       │              │
-└──────────────┘ write └──────────────────────────────┘       └──────────────┘
+  📝 NOTION                    🧠 AURA MCP                     📁 FILESYSTEM
+ ┌─────────────┐            ┌──────────────────┐            ┌──────────────┐
+ │             │   read     │                  │   write    │              │
+ │  Task:      │ ─────────► │  Interpret task   │ ─────────► │  Real files  │
+ │  "Build a   │            │  Validate plan    │            │  Real code   │
+ │   React     │            │  Scaffold project │            │  Real project│
+ │   app"      │            │                  │            │              │
+ │             │ ◄───────── │  Write results    │            │              │
+ │  ✅ Done    │   update   │  back to Notion   │            │              │
+ └─────────────┘            └──────────────────┘            └──────────────┘
 ```
 
-1. You write a task in Notion — *"Build a task manager with React"*
-2. AURA reads it, interprets it (LLM or rule-based), and builds the project
-3. Real files appear on disk. Notion task updates to **Done** with a file tree summary.
+<br />
 
----
+**Three simple steps:**
 
-## MCP Tools
+| Step | What Happens |
+|:----:|:------------|
+| **1️⃣** | You write a task in Notion → *"Build a task manager with React"* |
+| **2️⃣** | AURA interprets it (AI or rules), validates, and scaffolds the project |
+| **3️⃣** | Real files appear on disk. Notion updates to **✅ Done** with a summary |
 
-AURA exposes three tools via the Model Context Protocol:
+<br />
 
-| Tool | Input | Description |
-|------|-------|-------------|
-| `run_aura` | — | Full pipeline: fetch pending Notion tasks → interpret → scaffold → update Notion |
-| `get_pending_tasks` | — | Return all pending tasks from the Notion database |
-| `run_single_task` | `{ task: "..." }` | Interpret and scaffold from text — no Notion required |
+## 🛠️ MCP Tools
 
----
+AURA exposes **3 tools** via the Model Context Protocol:
 
-## Prerequisites
+| Tool | Input | What It Does |
+|:-----|:------|:-------------|
+| 🚀 `run_aura` | — | Full pipeline: Notion → interpret → scaffold → update Notion |
+| 📋 `get_pending_tasks` | — | Fetch and return all pending tasks from Notion |
+| ⚙️ `run_single_task` | `{ task: "..." }` | Scaffold from text directly — no Notion needed |
 
-- [Node.js](https://nodejs.org/) v18+
-- A [Notion integration](https://www.notion.so/my-integrations) with an API key
-- (Optional) An [OpenAI API key](https://platform.openai.com/api-keys) for LLM-powered interpretation
+<br />
 
-### Notion Database Setup
+## 📦 Supported Frameworks
 
-Create a Notion database with these properties:
+<table>
+<tr>
+<td align="center"><strong>⚛️ React</strong><br/><sub>8 files</sub></td>
+<td align="center"><strong>🟩 Node.js</strong><br/><sub>7 files</sub></td>
+<td align="center"><strong>🐍 FastAPI</strong><br/><sub>5 files</sub></td>
+</tr>
+<tr>
+<td>
+<code>package.json</code><br/>
+<code>src/App.js</code><br/>
+<code>src/index.js</code><br/>
+<code>src/App.css</code><br/>
+<code>src/components/Header.js</code><br/>
+<code>public/index.html</code><br/>
+<code>.gitignore</code><br/>
+<code>README.md</code>
+</td>
+<td>
+<code>package.json</code><br/>
+<code>index.js</code> (Express + CORS)<br/>
+<code>src/routes/index.js</code><br/>
+<code>src/middleware/errorHandler.js</code><br/>
+<code>.env.example</code><br/>
+<code>.gitignore</code><br/>
+<code>README.md</code>
+</td>
+<td>
+<code>main.py</code><br/>
+<code>routes.py</code> (Pydantic)<br/>
+<code>requirements.txt</code><br/>
+<code>.gitignore</code><br/>
+<code>README.md</code>
+</td>
+</tr>
+</table>
 
-| Property | Type   | Notes                             |
-|----------|--------|-----------------------------------|
-| Name     | Title  | The task description              |
-| Status   | Status | Uses: Pending, In progress, Done  |
-| Output   | Text   | AURA writes results here          |
+> 💡 All generated files contain **real, functional code** — not placeholders.
 
-Connect your integration: open the database → click `...` → **Connections** → add your integration.
+<br />
 
----
+## 🚀 Quick Start
 
-## Setup
+### Prerequisites
+
+- 📗 [Node.js](https://nodejs.org/) v18+
+- 📓 A [Notion integration](https://www.notion.so/my-integrations) with API key
+- 🤖 (Optional) [OpenAI API key](https://platform.openai.com/api-keys) for AI interpretation
+
+### 1. Install
 
 ```bash
 cd aura-mcp
 npm install
+```
+
+### 2. Configure
+
+```bash
 cp .env.example .env
 ```
 
-Fill in your `.env`:
+Edit `.env` with your keys:
 
-```
+```env
 NOTION_API_KEY=ntn_your_key
 NOTION_DATABASE_ID=your_database_id
-OPENAI_API_KEY=sk-your_key        # optional
+OPENAI_API_KEY=sk-your_key          # optional
 ```
 
----
+### 3. Setup Notion Database
 
-## Usage
+Create a database with these properties:
 
-### Run the pipeline directly
+| Property | Type | Notes |
+|:---------|:-----|:------|
+| 📝 **Name** | Title | Your task description |
+| 🔄 **Status** | Status | Pending → In progress → Done |
+| 📤 **Output** | Text | AURA writes results here |
 
-Create a task in Notion with Status = **Pending**, then:
+> Connect your integration: database `...` menu → **Connections** → add your integration
+
+### 4. Run
 
 ```bash
+# Direct pipeline
 npm start
-```
 
-AURA fetches pending tasks, interprets them, scaffolds projects into `output/`, and updates Notion.
-
-### Run as MCP server
-
-```bash
+# As MCP server
 npm run mcp
 ```
 
-Starts AURA as an MCP server over stdio for any MCP client.
+<br />
 
-### Use with Claude Desktop
+## 🖥️ Claude Desktop Integration
 
-Copy `claude_desktop_config.example.json` into your Claude Desktop config directory, update the `cwd` path, and restart Claude Desktop.
+Add to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "aura-mcp": {
+      "command": "node",
+      "args": ["src/mcp/server.js"],
+      "cwd": "/absolute/path/to/aura-mcp"
+    }
+  }
+}
+```
 
 Then ask Claude:
-- *"Run my pending Notion tasks"*
-- *"Scaffold a FastAPI backend for a bookstore"*
-- *"What tasks are pending in my Notion?"*
 
----
+> 💬 *"Run my pending Notion tasks"*
+>
+> 💬 *"Scaffold a FastAPI backend for a bookstore"*
+>
+> 💬 *"What tasks are pending in my Notion?"*
 
-## Supported Frameworks
+<br />
 
-| Keywords in task | Framework | Files generated |
-|------------------|-----------|-----------------|
-| react            | React     | package.json, App.js, index.js, App.css, Header component, index.html, .gitignore, README (8 files) |
-| node, express    | Node.js   | package.json, index.js (Express + CORS), routes, error middleware, .env.example, .gitignore, README (7 files) |
-| fastapi, python  | FastAPI   | main.py, routes.py (Pydantic models), requirements.txt, .gitignore, README (5 files) |
-
-All generated files contain real, functional code — not placeholders.
-
----
-
-## Architecture
+## 🏗️ Architecture
 
 ```
 aura-mcp/
-├── src/
-│   ├── mcp/
-│   │   └── server.js                ← MCP server (3 tools, stdio transport)
-│   ├── core/
-│   │   └── orchestrator.js          ← Pipeline engine
-│   ├── services/
-│   │   ├── notion.service.js        ← Notion API read/write
-│   │   ├── interpreter.service.js   ← LLM-first, rule-based fallback
-│   │   ├── llm.service.js           ← Single OpenAI call per task
-│   │   ├── validator.service.js     ← Plan validation + sanitization
-│   │   └── executor.service.js      ← Project scaffolder (3 frameworks)
-│   └── utils/
-│       ├── logger.js                ← [AURA] prefixed logging
-│       └── file.utils.js            ← Safe filesystem helpers
-├── test/
-│   └── notion.test.js               ← Runs full pipeline
-├── output/                           ← Generated projects
-├── .env.example
-├── claude_desktop_config.example.json
-└── package.json
+├── 🔌 src/mcp/
+│   └── server.js                 MCP server — 3 tools, stdio transport
+├── 🧠 src/core/
+│   └── orchestrator.js           Pipeline engine
+├── ⚙️ src/services/
+│   ├── notion.service.js         Notion API read/write
+│   ├── interpreter.service.js    LLM-first, rule-based fallback
+│   ├── llm.service.js            Single OpenAI call per task
+│   ├── validator.service.js      Plan validation + sanitization
+│   └── executor.service.js       Project scaffolder (3 frameworks)
+├── 🔧 src/utils/
+│   ├── logger.js                 [AURA] prefixed logging
+│   └── file.utils.js             Safe filesystem helpers
+├── 🧪 test/
+│   └── notion.test.js            Integration test
+└── 📁 output/                    Generated projects land here
 ```
 
-### Safety Chain
+<br />
 
-The LLM is never trusted blindly:
+## 🛡️ Safety Chain
+
+The LLM is **never trusted blindly**. Every response is validated before execution:
 
 ```
-Task text → LLM (1 call) → JSON parse → Validator → Executor
-                 ↓ fail         ↓ fail
-             Rule-based ←───────┘
+📝 Task → 🤖 LLM (1 call) → 📋 JSON parse → ✅ Validator → 🏗️ Executor
+               ↓ fail              ↓ fail
+           📏 Rule-based  ◄────────┘
 ```
 
-- No `OPENAI_API_KEY`? Rule-based parser runs automatically.
-- LLM returns bad JSON? Falls back to rules.
-- Validator rejects the plan? Falls back to rules.
-- The system never crashes.
+| Scenario | What Happens |
+|:---------|:-------------|
+| 🔑 No OpenAI key? | Rule-based parser runs automatically |
+| ❌ LLM returns bad JSON? | Falls back to rules |
+| ⚠️ Validator rejects plan? | Falls back to rules |
+| 💥 Execution fails? | Notion updated with error, system continues |
+
+> **The system never crashes.** Every failure is handled gracefully.
+
+<br />
+
+## 📊 Example Run
+
+```
+[AURA] INFO  === AURA MCP — Execution Pipeline ===
+[AURA] INFO  Notion client initialized
+[AURA] INFO  Fetched 1 pending task(s)
+[AURA] INFO  ──── Task: "Build a task manager with React" ────
+[AURA] INFO  Task → status: "In progress"
+[AURA] INFO  Interpreting task...
+[AURA] INFO  Parsed → framework: react, name: task_manager
+[AURA] INFO  Scaffolding react project...
+[AURA] INFO  Created 8 file(s)
+[AURA] INFO  Task → status: "Done"
+[AURA] INFO  Task completed ✓
+[AURA] INFO  === Pipeline complete ===
+[AURA] INFO  Results: 1 succeeded, 0 failed, 1 total
+```
+
+<br />
 
 ---
 
-## License
+<div align="center">
 
-MIT
+**Built for the [Notion MCP Hackathon](https://notion.so) 🏆**
+
+Made with 🧠 by AURA
+
+</div>
