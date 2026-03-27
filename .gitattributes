@@ -1,0 +1,59 @@
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# Python
+*.py text diff=python
+*.pyi text diff=python
+
+# Shell
+*.sh text eol=lf
+
+# YAML / JSON / TOML
+*.yaml text
+*.yml text
+*.json text
+*.toml text
+
+# Markdown / docs
+*.md text diff=markdown
+*.txt text
+
+# Web
+*.html text diff=html
+*.css text
+
+# Config
+*.cfg text
+*.ini text
+*.env text
+
+# Docker
+Dockerfile text
+
+# Ensure shell scripts always use LF (even on Windows)
+scripts/*.sh text eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+
+# Binary — do not diff or merge
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+
+# Archives
+*.zip binary
+*.tar.gz binary
+
+# Lock files — generated, show diffs but do not merge manually
+package-lock.json -diff
+poetry.lock -diff
+
+# GitHub linguist overrides
+docs/* linguist-documentation
+website/* linguist-documentation
+examples/* linguist-documentation
+tests/* linguist-detectable=false

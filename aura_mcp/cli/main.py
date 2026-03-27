@@ -68,28 +68,55 @@ def show_config() -> None:
 
 @app.command()
 def plugins() -> None:
-    """List all discovered plugins."""
+    """List all discovered plugins with descriptions."""
     from dotenv import load_dotenv
 
     from aura_mcp.config.loader import load_config
-    from aura_mcp.plugins.manager import PluginManager
+    from aura_mcp.plugins.manager import plugin_manager
 
     load_dotenv()
     load_config()
 
-    pm = PluginManager()
-    pm.discover()
-
     table = Table(title="Loaded Plugins")
-    table.add_column("Name", style="cyan")
+    table.add_column("Name", style="cyan", min_width=14)
     table.add_column("Description")
+    table.add_column("Status", justify="center")
 
-    for name in pm.list_plugins():
-        plugin = pm.get_plugin(name)
+    health = {r.name: r for r in plugin_manager.check_plugins()}
+
+    for name in plugin_manager.list_plugins():
+        plugin = plugin_manager.get(name)
         desc = plugin.describe() if plugin else ""
-        table.add_row(name, desc)
+        ok = health.get(name)
+        status = "[green]OK[/green]" if ok and ok.ok else "[red]FAIL[/red]"
+        table.add_row(name, desc, status)
 
     rprint(table)
+
+
+@app.command("plugins-debug")
+def plugins_debug() -> None:
+    """Show detailed debug info for every loaded plugin."""
+    from dotenv import load_dotenv
+
+    from aura_mcp.config.loader import load_config
+    from aura_mcp.plugins.manager import plugin_manager
+
+    load_dotenv()
+    load_config()
+
+    health = {r.name: r for r in plugin_manager.check_plugins()}
+
+    for meta in plugin_manager.all_meta():
+        hr = health.get(meta.name)
+        status = "[green]OK[/green]" if hr and hr.ok else "[red]FAIL[/red]"
+        rprint(f"\n[bold cyan]{meta.name}[/bold cyan]  {status}")
+        rprint(f"  module:      {meta.module_path}")
+        rprint(f"  class:       {meta.class_name}")
+        rprint(f"  description: {meta.description}")
+        if hr and hr.errors:
+            for err in hr.errors:
+                rprint(f"  [red]error:[/red]       {err}")
 
 
 @app.command()
@@ -100,7 +127,7 @@ def doctor() -> None:
     from dotenv import load_dotenv
 
     from aura_mcp.config.loader import load_config
-    from aura_mcp.plugins.manager import PluginManager
+    from aura_mcp.plugins.manager import plugin_manager
 
     load_dotenv()
     cfg = load_config()
@@ -133,9 +160,7 @@ def doctor() -> None:
     checks.append(("LLM mode", True, mode))
 
     # Plugins
-    pm = PluginManager()
-    pm.discover()
-    names = pm.list_plugins()
+    names = plugin_manager.list_plugins()
     checks.append(("Plugins loaded", len(names) > 0, ", ".join(names)))
 
     table = Table()

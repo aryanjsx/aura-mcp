@@ -1,11 +1,8 @@
-# JavaScript
-node_modules/
-output/
-
 # Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 *.egg-info/
 dist/
 build/
@@ -17,7 +14,22 @@ venv/
 .env
 *.log
 
+# Test & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Linter cache
+.ruff_cache/
+
+# Scaffolder output
+output/
+
 # IDE
 .vscode/
 .idea/
 *.swp
+
+# Local dev artifacts
+test.py
+aura_config.yaml

@@ -18,7 +18,9 @@ class FilesystemPlugin(BasePlugin):
         return "filesystem"
 
     async def execute(self, intent: dict[str, Any]) -> dict[str, Any]:
+        logger = get_logger()
         action = intent.get("action", "")
+        logger.info("Filesystem plugin executing action: %s", action)
 
         if action == "create_folder":
             return self._create_folder(intent["path"])
@@ -52,8 +54,9 @@ class FilesystemPlugin(BasePlugin):
         if not p.is_dir():
             raise FileNotFoundError(f"Directory not found: {dir_path}")
         entries = sorted(
-            {"name": e.name, "type": "dir" if e.is_dir() else "file"}
-            for e in p.iterdir()
+            ({"name": e.name, "type": "dir" if e.is_dir() else "file"}
+             for e in p.iterdir()),
+            key=lambda entry: entry["name"],
         )
         logger.info("Listed %d entries in %s", len(entries), dir_path)
         return {"status": "ok", "entries": entries}

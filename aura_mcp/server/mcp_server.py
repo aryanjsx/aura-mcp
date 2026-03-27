@@ -16,28 +16,17 @@ from mcp.server.fastmcp import FastMCP
 from aura_mcp.core.executor import execute_task
 from aura_mcp.core.interpreter import parse_task
 from aura_mcp.core.orchestrator import run_pipeline
-from aura_mcp.plugins.manager import PluginManager
+from aura_mcp.plugins.manager import plugin_manager
 from aura_mcp.utils.logger import get_logger
 
 mcp_app = FastMCP("aura-mcp")
-
-_plugin_manager: PluginManager | None = None
-
-
-def _get_plugin_manager() -> PluginManager:
-    global _plugin_manager  # noqa: PLW0603
-    if _plugin_manager is None:
-        _plugin_manager = PluginManager()
-        _plugin_manager.discover()
-    return _plugin_manager
 
 
 @mcp_app.tool()
 async def run_aura() -> str:
     """Run the full AURA pipeline: fetch pending Notion tasks, interpret, scaffold, and update."""
     try:
-        pm = _get_plugin_manager()
-        result = await run_pipeline(pm)
+        result = await run_pipeline(plugin_manager)
         return json.dumps({"status": "success", **result}, indent=2)
     except Exception as exc:
         return json.dumps({"error": str(exc)})
@@ -47,8 +36,7 @@ async def run_aura() -> str:
 async def get_pending_tasks() -> str:
     """Fetch and return all pending tasks from the configured Notion database."""
     try:
-        pm = _get_plugin_manager()
-        result = await pm.execute("notion", {"action": "get_pending_tasks"})
+        result = await plugin_manager.execute("notion", {"action": "get_pending_tasks"})
         tasks = result.get("tasks", [])
         return json.dumps(
             {"status": "success", "count": len(tasks), "tasks": tasks}, indent=2
@@ -94,5 +82,5 @@ def start_server() -> None:
 
     logger = get_logger()
     logger.info("AURA MCP server starting on stdio")
-    _get_plugin_manager()
+    plugin_manager.list_plugins()  # trigger lazy discovery
     mcp_app.run(transport="stdio")
