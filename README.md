@@ -217,6 +217,12 @@ aura-mcp/
 
 ## 🚀 Installation
 
+### From PyPI
+
+```bash
+pip install orkio
+```
+
 ### From source
 
 ```bash

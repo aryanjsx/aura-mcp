@@ -3,8 +3,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "aura-mcp"
-version = "0.3.0"
+name = "orkio"
+version = "0.3.1"
 description = "Autonomous Unified Resource Architect — an extensible MCP platform that reads Notion tasks and executes them"
 readme = "README.md"
 license = "MIT"
