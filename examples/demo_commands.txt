@@ -1,0 +1,17 @@
+# AURA MCP — Demo Commands
+#
+# These can be fed directly to the `run_single_task` MCP tool
+# or written as task titles in a connected Notion database.
+#
+# ── Scaffolding ──────────────────────────────────────────────
+create a fastapi todo app
+build a react dashboard for analytics
+setup a node express REST API for a bookstore
+scaffold a fastapi blog backend
+create a react portfolio website
+build a node chat server with express
+
+# ── Interpreted by rule-based fallback (no LLM needed) ──────
+make a simple python api
+generate a frontend app
+create an express microservice

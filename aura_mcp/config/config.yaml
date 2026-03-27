@@ -1,0 +1,24 @@
+# AURA MCP — Default Configuration
+# Override values via environment variables or a custom config file.
+
+workspace: ~/projects
+default_stack: fastapi
+log_level: info
+
+# LLM provider: "openai" or "local"
+llm_mode: openai
+
+# Feature flags
+github_enabled: true
+docker_enabled: true
+
+notion:
+  api_key: ""        # Override via NOTION_API_KEY env var
+  database_id: ""    # Override via NOTION_DATABASE_ID env var
+
+openai:
+  api_key: ""        # Override via OPENAI_API_KEY env var
+  model: gpt-3.5-turbo
+
+github:
+  token: ""          # Override via GITHUB_TOKEN env var

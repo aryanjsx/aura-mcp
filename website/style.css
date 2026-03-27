@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #e4e4e7;
+  background: #09090b;
+  line-height: 1.6;
+}
+
+/* ── Hero ──────────────────────────────────── */
+
+.hero {
+  text-align: center;
+  padding: 6rem 1.5rem 4rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  letter-spacing: -0.02em;
+}
+
+.accent {
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: #a1a1aa;
+  margin: 0.75rem 0 2rem;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: #6366f1;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.cta:hover {
+  background: #4f46e5;
+}
+
+/* ── Features ──────────────────────────────── */
+
+.features {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.features h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #a78bfa;
+}
+
+.card p {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+}
+
+/* ── Install ───────────────────────────────── */
+
+.install {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.install h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.install pre {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: left;
+  overflow-x: auto;
+}
+
+.install code {
+  color: #a78bfa;
+  font-family: "Cascadia Code", "Fira Code", monospace;
+  font-size: 0.95rem;
+}
+
+/* ── Footer ────────────────────────────────── */
+
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #52525b;
+  font-size: 0.85rem;
+}

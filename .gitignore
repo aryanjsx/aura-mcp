@@ -1,4 +1,23 @@
+# JavaScript
 node_modules/
 output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.venv/
+
+# Environment
 .env
 *.log
+
+# IDE
+.vscode/
+.idea/
+*.swp

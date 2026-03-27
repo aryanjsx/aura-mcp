@@ -1,9 +1,8 @@
 {
   "mcpServers": {
     "aura-mcp": {
-      "command": "node",
-      "args": ["src/mcp/server.js"],
-      "cwd": "C:\\Users\\LENOVO\\Documents\\AURA MCP\\aura-mcp"
+      "command": "aura",
+      "args": ["start"]
     }
   }
 }
