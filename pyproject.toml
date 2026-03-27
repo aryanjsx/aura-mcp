@@ -9,7 +9,15 @@ description = "Autonomous Unified Resource Architect — an extensible MCP platf
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
-keywords = ["mcp", "notion", "automation", "scaffolding", "openai"]
+keywords = [
+  "mcp",
+  "ai automation",
+  "developer tools",
+  "project scaffolding",
+  "task automation",
+  "notion automation",
+  "plugin system"
+]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
