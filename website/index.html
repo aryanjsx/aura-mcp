@@ -3,55 +3,245 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AURA MCP — AI Automation Platform</title>
+  <title>AURA MCP — AI-Powered Project Scaffolding</title>
+  <meta name="description" content="Describe what you want. AURA builds it for you. An AI-powered MCP server that turns natural language into production-ready codebases." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- ─── NAV ─── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">AURA <span>MCP</span></a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#frameworks">Frameworks</a>
+        <a href="#install">Install</a>
+        <a href="https://github.com/aryanjsx/aura-mcp" class="nav-github" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
   <header class="hero">
-    <h1>AURA <span class="accent">MCP</span></h1>
-    <p class="tagline">Turn ideas into real projects automatically</p>
-    <a class="cta" href="https://github.com/aryanjsx/aura-mcp">Get Started</a>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Open Source &middot; MIT License</div>
+      <h1>Describe what you want.<br/><span class="gradient-text">AURA builds it for you.</span></h1>
+      <p class="hero-sub">An AI-powered MCP server that turns plain English into production-ready FastAPI, Express, and React projects — instantly.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#install">Get Started</a>
+        <a class="btn btn-secondary" href="https://github.com/aryanjsx/aura-mcp" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+      <div class="hero-terminal">
+        <div class="terminal-bar">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">terminal</span>
+        </div>
+        <pre class="terminal-body"><code><span class="t-prompt">$</span> pip install orkio
+<span class="t-prompt">$</span> aura start
+<span class="t-muted">[AURA]</span> <span class="t-success">MCP server running on stdio</span>
+<span class="t-muted">[AURA]</span> Loaded 5 plugins: scaffolder, notion, github, docker, filesystem
+<span class="t-muted">[AURA]</span> Ready for tasks...</code></pre>
+      </div>
+    </div>
   </header>
 
-  <section class="features">
-    <h2>What AURA Does</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>AI Interpretation</h3>
-        <p>Describe a task in plain English. AURA converts it into a structured execution plan using OpenAI or a local model.</p>
+  <!-- ─── FEATURES ─── -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Everything you need to ship faster</h2>
+        <p>AURA handles the boring parts so you can focus on what matters.</p>
       </div>
-      <div class="card">
-        <h3>Project Scaffolding</h3>
-        <p>Generates fully functional React, Node.js, and FastAPI projects with real, runnable code.</p>
-      </div>
-      <div class="card">
-        <h3>Notion Integration</h3>
-        <p>Reads tasks from your Notion database, executes them, and writes results back — fully automatic.</p>
-      </div>
-      <div class="card">
-        <h3>GitHub &amp; Docker</h3>
-        <p>Create repos, push files, and generate Dockerfiles — all through the plugin system.</p>
-      </div>
-      <div class="card">
-        <h3>Plugin Architecture</h3>
-        <p>Drop a Python file into the plugins folder and it's live. No core changes needed.</p>
-      </div>
-      <div class="card">
-        <h3>MCP Compatible</h3>
-        <p>Works with Claude Desktop and any MCP client via the standard stdio transport.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#129504;</div>
+          <h3>AI Interpretation</h3>
+          <p>Describe a task in plain English. AURA parses it with OpenAI and falls back to a deterministic rule engine when no API key is set.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128747;</div>
+          <h3>Safety Validation</h3>
+          <p>Every plan is validated and sanitized before execution. Malformed or dangerous input never reaches your filesystem.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128230;</div>
+          <h3>Project Scaffolding</h3>
+          <p>Generates complete, runnable projects with proper folder structure, dependencies, routes, and configuration files.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128203;</div>
+          <h3>Notion Integration</h3>
+          <p>Reads pending tasks from your Notion database, builds the project, and marks them done automatically.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128268;</div>
+          <h3>Plugin System</h3>
+          <p>Five built-in plugins with auto-discovery. Drop a Python file into the plugins folder and it's live on restart.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#129302;</div>
+          <h3>MCP Compatible</h3>
+          <p>Works natively with Claude Desktop, Cursor, and any MCP-compatible AI client over stdio transport.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="install">
-    <h2>Quick Install</h2>
-    <pre><code>pip install orkio
-aura doctor
-aura start</code></pre>
+  <!-- ─── HOW IT WORKS ─── -->
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>How it works</h2>
+        <p>From idea to project in three steps.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Describe</h3>
+          <p>Write a task in Notion, type a prompt in Claude Desktop, or send a command via the CLI.</p>
+          <div class="step-example">"Build a FastAPI todo app with authentication"</div>
+        </div>
+        <div class="step-arrow">&rarr;</div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Interpret</h3>
+          <p>AURA parses your intent, selects the right framework, and creates a validated execution plan.</p>
+          <div class="step-example">action: scaffold_project, framework: fastapi, name: todo_app</div>
+        </div>
+        <div class="step-arrow">&rarr;</div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Build</h3>
+          <p>Real files appear on disk — routes, models, config, dependencies. Ready to run.</p>
+          <div class="step-example">Created 6 files in ~/projects/todo_app/</div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>AURA MCP &mdash; Open-source AI automation platform</p>
+  <!-- ─── FRAMEWORKS ─── -->
+  <section id="frameworks" class="frameworks">
+    <div class="container">
+      <div class="section-header">
+        <h2>Supported frameworks</h2>
+        <p>Say the name. AURA handles the rest.</p>
+      </div>
+      <div class="framework-cards">
+        <div class="fw-card">
+          <div class="fw-icon">&#9889;</div>
+          <h3>FastAPI</h3>
+          <p>Python</p>
+          <ul>
+            <li>main.py with app factory</li>
+            <li>routes.py with CRUD endpoints</li>
+            <li>Pydantic models</li>
+            <li>requirements.txt</li>
+          </ul>
+        </div>
+        <div class="fw-card">
+          <div class="fw-icon">&#128994;</div>
+          <h3>Express</h3>
+          <p>Node.js</p>
+          <ul>
+            <li>index.js with server setup</li>
+            <li>Route modules</li>
+            <li>Middleware &amp; CORS</li>
+            <li>package.json</li>
+          </ul>
+        </div>
+        <div class="fw-card">
+          <div class="fw-icon">&#9883;</div>
+          <h3>React</h3>
+          <p>JavaScript</p>
+          <ul>
+            <li>src/App.js with components</li>
+            <li>Public directory &amp; HTML</li>
+            <li>CSS styling</li>
+            <li>package.json</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INTEGRATIONS ─── -->
+  <section class="integrations">
+    <div class="container">
+      <div class="section-header">
+        <h2>Use it your way</h2>
+        <p>AURA plugs into the tools you already use.</p>
+      </div>
+      <div class="integration-grid">
+        <div class="int-card">
+          <h3>Claude Desktop</h3>
+          <p>Add AURA as an MCP server and scaffold projects by chatting with Claude.</p>
+        </div>
+        <div class="int-card">
+          <h3>Cursor IDE</h3>
+          <p>Call AURA's tools directly from Cursor's AI assistant.</p>
+        </div>
+        <div class="int-card">
+          <h3>Notion</h3>
+          <p>Write a task in your database. AURA picks it up and builds it automatically.</p>
+        </div>
+        <div class="int-card">
+          <h3>Any MCP Client</h3>
+          <p>AURA speaks the Model Context Protocol. Any compatible client works out of the box.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── INSTALL ─── -->
+  <section id="install" class="install-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Get started in 30 seconds</h2>
+      </div>
+      <div class="install-card">
+        <div class="install-step">
+          <span class="install-label">Install</span>
+          <pre><code>pip install orkio</code></pre>
+        </div>
+        <div class="install-step">
+          <span class="install-label">Verify</span>
+          <pre><code>aura doctor</code></pre>
+        </div>
+        <div class="install-step">
+          <span class="install-label">Run</span>
+          <pre><code>aura start</code></pre>
+        </div>
+      </div>
+      <div class="install-links">
+        <a href="https://pypi.org/project/orkio/" target="_blank" rel="noopener">PyPI</a>
+        <span class="link-sep">&middot;</span>
+        <a href="https://github.com/aryanjsx/aura-mcp" target="_blank" rel="noopener">GitHub</a>
+        <span class="link-sep">&middot;</span>
+        <a href="https://github.com/aryanjsx/aura-mcp#api-documentation" target="_blank" rel="noopener">Docs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-brand">AURA MCP</p>
+        <p class="footer-copy">Open-source AI automation platform &middot; MIT License</p>
+        <p class="footer-author">Built by <a href="https://github.com/aryanjsx" target="_blank" rel="noopener">Aryan Kumar</a></p>
+      </div>
+    </div>
   </footer>
+
 </body>
 </html>
