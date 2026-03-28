@@ -25,11 +25,6 @@ An AI-powered <strong>Model Context Protocol</strong> server that interprets nat
 validates them for safety, and executes them through a modular plugin architecture.<br/>
 Write a task in Notion — or talk to an AI agent — and watch real projects appear on disk.
 </p>
-
-<br/>
-
-<img src="https://user-images.githubusercontent.com/placeholder/aura-demo.gif" alt="AURA MCP Demo" width="700"/>
-
 </div>
 
 <br/>
@@ -226,7 +221,7 @@ pip install orkio
 ### From source
 
 ```bash
-git clone https://github.com/your-username/aura-mcp.git
+git clone https://github.com/aryanjsx/aura-mcp.git
 cd aura-mcp
 pip install -e .
 ```
@@ -288,6 +283,127 @@ Then connect your integration: open the database menu (**...**) → **Connection
 | 🩺 `aura doctor` | Check system readiness — Python, config, env vars, plugins |
 | 📄 `aura init` | Initialize a config file in the current directory |
 | 🐛 `aura plugins-debug` | Show detailed debug info for every loaded plugin |
+
+### 🌐 Usage by Framework
+
+AURA understands natural language and maps it to the right framework automatically. Here's how to scaffold projects in each supported language:
+
+<table>
+<tr>
+<td width="33%">
+
+#### ⚡ Python — FastAPI
+
+</td>
+<td width="33%">
+
+#### 🟢 JavaScript — Node / Express
+
+</td>
+<td width="33%">
+
+#### ⚛️ JavaScript — React
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Via CLI:**
+```bash
+aura start
+# then use run_single_task:
+# "create a fastapi todo app"
+```
+
+**Via Notion:**
+> Task: *"Build a FastAPI blog backend"*
+
+**What you get:**
+```
+blog_backend/
+├── main.py
+├── routes.py
+├── models.py
+├── requirements.txt
+└── README.md
+```
+
+</td>
+<td>
+
+**Via CLI:**
+```bash
+aura start
+# then use run_single_task:
+# "setup a node express REST API"
+```
+
+**Via Notion:**
+> Task: *"Build a Node Express bookstore API"*
+
+**What you get:**
+```
+bookstore_api/
+├── index.js
+├── routes/
+├── package.json
+└── README.md
+```
+
+</td>
+<td>
+
+**Via CLI:**
+```bash
+aura start
+# then use run_single_task:
+# "create a react dashboard"
+```
+
+**Via Notion:**
+> Task: *"Build a React portfolio website"*
+
+**What you get:**
+```
+portfolio/
+├── src/
+│   ├── App.js
+│   └── index.js
+├── public/
+├── package.json
+└── README.md
+```
+
+</td>
+</tr>
+</table>
+
+#### 🤖 Using via AI Agents (Claude Desktop / Cursor)
+
+Any MCP-compatible AI client can call AURA's tools directly in natural language:
+
+| Prompt | Framework Detected | What Happens |
+|:-------|:-------------------|:-------------|
+| *"Scaffold a FastAPI todo app"* | Python (FastAPI) | Generates a complete FastAPI project with routes, models, and dependencies |
+| *"Create a Node Express REST API for a bookstore"* | JavaScript (Express) | Generates an Express server with routing, middleware, and package.json |
+| *"Build a React dashboard for analytics"* | JavaScript (React) | Generates a React app with components, styling, and build config |
+| *"Setup a blog backend"* | Python (FastAPI) | Defaults to FastAPI when no framework is specified |
+
+#### 🧠 How Framework Detection Works
+
+AURA interprets your task using AI (or a rule-based fallback) and picks the right framework:
+
+```
+"create a fastapi ..."     →  Python / FastAPI
+"build a node ..."         →  JavaScript / Node + Express
+"setup an express ..."     →  JavaScript / Node + Express
+"create a react ..."       →  JavaScript / React
+"build a ... backend"      →  Python / FastAPI (default)
+"scaffold a ... app"       →  Inferred from keywords
+```
+
+> No language flags or config needed — just describe what you want in plain English.
 
 ### 🩺 Doctor output
 
