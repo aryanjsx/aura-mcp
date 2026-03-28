@@ -7,22 +7,29 @@
   <meta name="description" content="Describe what you want. AURA builds it for you. An AI-powered MCP server that turns natural language into production-ready codebases." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <div class="noise"></div>
+  <div class="grid-bg"></div>
+
   <!-- ─── NAV ─── -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">AURA <span>MCP</span></a>
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">A</span>
+        AURA <span class="logo-accent">MCP</span>
+      </a>
       <div class="nav-links">
         <a href="#features">Features</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#frameworks">Frameworks</a>
         <a href="#install">Install</a>
-        <a href="https://github.com/aryanjsx/aura-mcp" class="nav-github" target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        <a href="https://github.com/aryanjsx/aura-mcp" class="nav-cta" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          Star on GitHub
         </a>
       </div>
     </div>
@@ -30,204 +37,299 @@
 
   <!-- ─── HERO ─── -->
   <header class="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-content">
-      <div class="hero-badge">Open Source &middot; MIT License</div>
-      <h1>Describe what you want.<br/><span class="gradient-text">AURA builds it for you.</span></h1>
-      <p class="hero-sub">An AI-powered MCP server that turns plain English into production-ready FastAPI, Express, and React projects — instantly.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#install">Get Started</a>
-        <a class="btn btn-secondary" href="https://github.com/aryanjsx/aura-mcp" target="_blank" rel="noopener">View on GitHub</a>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+    <div class="hero-content fade-up">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Open Source &middot; MIT License &middot; v0.3.1
       </div>
-      <div class="hero-terminal">
-        <div class="terminal-bar">
-          <span class="terminal-dot red"></span>
-          <span class="terminal-dot yellow"></span>
-          <span class="terminal-dot green"></span>
-          <span class="terminal-title">terminal</span>
+      <h1>Describe what you want.<br/><span class="gradient-text">AURA builds it.</span></h1>
+      <p class="hero-sub">An AI-powered MCP server that turns plain English into<br/>production-ready FastAPI, Express, and React projects.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#install">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+          Get Started
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/aryanjsx/aura-mcp" target="_blank" rel="noopener">
+          View on GitHub
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-terminal fade-up delay-1">
+      <div class="terminal-chrome">
+        <div class="terminal-dots">
+          <span></span><span></span><span></span>
         </div>
-        <pre class="terminal-body"><code><span class="t-prompt">$</span> pip install orkio
-<span class="t-prompt">$</span> aura start
-<span class="t-muted">[AURA]</span> <span class="t-success">MCP server running on stdio</span>
-<span class="t-muted">[AURA]</span> Loaded 5 plugins: scaffolder, notion, github, docker, filesystem
-<span class="t-muted">[AURA]</span> Ready for tasks...</code></pre>
+        <span class="terminal-title">zsh</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line"><span class="t-prompt">~</span> <span class="t-cmd">pip install orkio</span></div>
+        <div class="terminal-line t-dim">Successfully installed orkio-0.3.1</div>
+        <div class="terminal-line"><span class="t-prompt">~</span> <span class="t-cmd">aura start</span></div>
+        <div class="terminal-line"><span class="t-bracket">[AURA]</span> <span class="t-ok">MCP server running on stdio</span></div>
+        <div class="terminal-line"><span class="t-bracket">[AURA]</span> Loaded 5 plugins</div>
+        <div class="terminal-line"><span class="t-bracket">[AURA]</span> <span class="t-ok">Ready for tasks...</span></div>
+        <div class="terminal-line terminal-cursor"><span class="t-prompt">~</span> <span class="cursor-blink">|</span></div>
       </div>
     </div>
   </header>
 
-  <!-- ─── FEATURES ─── -->
-  <section id="features" class="features">
+  <!-- ─── STATS ─── -->
+  <section class="stats fade-up">
     <div class="container">
-      <div class="section-header">
-        <h2>Everything you need to ship faster</h2>
-        <p>AURA handles the boring parts so you can focus on what matters.</p>
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="stat-value">252</span>
+          <span class="stat-label">Tests Passing</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">5</span>
+          <span class="stat-label">Built-in Plugins</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">3</span>
+          <span class="stat-label">Frameworks</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">3</span>
+          <span class="stat-label">MCP Tools</span>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURES ─── -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-label fade-up">Features</div>
+      <h2 class="section-title fade-up">Everything you need to ship faster</h2>
+      <p class="section-sub fade-up">AURA handles the boring parts so you can focus on building.</p>
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">&#129504;</div>
+        <div class="glass-card fade-up">
+          <div class="card-glow"></div>
+          <div class="card-icon purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93L12 22"/><path d="M8 6a4 4 0 0 1 8 0"/><path d="M17 12.5c1.77.5 3 1.85 3 3.5 0 2-2.69 3.5-6 3.5"/><path d="M4 16c0-1.65 1.23-3 3-3.5"/><path d="M4 16c0 2 2.69 3.5 6 3.5"/></svg>
+          </div>
           <h3>AI Interpretation</h3>
-          <p>Describe a task in plain English. AURA parses it with OpenAI and falls back to a deterministic rule engine when no API key is set.</p>
+          <p>Describe a task in plain English. AURA parses it with OpenAI and falls back to a deterministic rule engine automatically.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#128747;</div>
+        <div class="glass-card fade-up delay-1">
+          <div class="card-glow"></div>
+          <div class="card-icon blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
           <h3>Safety Validation</h3>
-          <p>Every plan is validated and sanitized before execution. Malformed or dangerous input never reaches your filesystem.</p>
+          <p>Every plan is validated and sanitized before execution. Malformed input never reaches your filesystem.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#128230;</div>
+        <div class="glass-card fade-up delay-2">
+          <div class="card-glow"></div>
+          <div class="card-icon green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
           <h3>Project Scaffolding</h3>
-          <p>Generates complete, runnable projects with proper folder structure, dependencies, routes, and configuration files.</p>
+          <p>Generates complete, runnable projects with proper folder structure, routes, models, and dependencies.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#128203;</div>
+        <div class="glass-card fade-up">
+          <div class="card-glow"></div>
+          <div class="card-icon orange">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+          </div>
           <h3>Notion Integration</h3>
           <p>Reads pending tasks from your Notion database, builds the project, and marks them done automatically.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#128268;</div>
+        <div class="glass-card fade-up delay-1">
+          <div class="card-glow"></div>
+          <div class="card-icon pink">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/><path d="M17 12h.01"/><path d="M7 12h.01"/></svg>
+          </div>
           <h3>Plugin System</h3>
-          <p>Five built-in plugins with auto-discovery. Drop a Python file into the plugins folder and it's live on restart.</p>
+          <p>Five built-in plugins with auto-discovery. Drop a Python file into the plugins folder and it's live.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#129302;</div>
+        <div class="glass-card fade-up delay-2">
+          <div class="card-glow"></div>
+          <div class="card-icon cyan">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+          </div>
           <h3>MCP Compatible</h3>
-          <p>Works natively with Claude Desktop, Cursor, and any MCP-compatible AI client over stdio transport.</p>
+          <p>Works natively with Claude Desktop, Cursor, and any MCP-compatible AI client over stdio.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ─── HOW IT WORKS ─── -->
-  <section id="how-it-works" class="how-it-works">
+  <section id="how-it-works" class="section section-alt">
     <div class="container">
-      <div class="section-header">
-        <h2>How it works</h2>
-        <p>From idea to project in three steps.</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
+      <div class="section-label fade-up">How It Works</div>
+      <h2 class="section-title fade-up">From idea to project in seconds</h2>
+      <p class="section-sub fade-up">Three steps. Zero boilerplate. Real code.</p>
+      <div class="steps-row">
+        <div class="step-card fade-up">
+          <div class="step-num">01</div>
           <h3>Describe</h3>
-          <p>Write a task in Notion, type a prompt in Claude Desktop, or send a command via the CLI.</p>
-          <div class="step-example">"Build a FastAPI todo app with authentication"</div>
+          <p>Write a task in Notion, prompt Claude, or use the CLI.</p>
+          <div class="step-code">"Build a FastAPI todo app"</div>
         </div>
-        <div class="step-arrow">&rarr;</div>
-        <div class="step">
-          <div class="step-number">2</div>
+        <div class="step-connector fade-up delay-1">
+          <div class="connector-line"></div>
+          <div class="connector-dot"></div>
+        </div>
+        <div class="step-card fade-up delay-1">
+          <div class="step-num">02</div>
           <h3>Interpret</h3>
-          <p>AURA parses your intent, selects the right framework, and creates a validated execution plan.</p>
-          <div class="step-example">action: scaffold_project, framework: fastapi, name: todo_app</div>
+          <p>AURA parses intent, picks the framework, and validates the plan.</p>
+          <div class="step-code">framework: fastapi, name: todo_app</div>
         </div>
-        <div class="step-arrow">&rarr;</div>
-        <div class="step">
-          <div class="step-number">3</div>
+        <div class="step-connector fade-up delay-2">
+          <div class="connector-line"></div>
+          <div class="connector-dot"></div>
+        </div>
+        <div class="step-card fade-up delay-2">
+          <div class="step-num">03</div>
           <h3>Build</h3>
-          <p>Real files appear on disk — routes, models, config, dependencies. Ready to run.</p>
-          <div class="step-example">Created 6 files in ~/projects/todo_app/</div>
+          <p>Real files on disk — routes, models, config. Ready to run.</p>
+          <div class="step-code">Created 6 files in ~/projects/</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ─── FRAMEWORKS ─── -->
-  <section id="frameworks" class="frameworks">
+  <section id="frameworks" class="section">
     <div class="container">
-      <div class="section-header">
-        <h2>Supported frameworks</h2>
-        <p>Say the name. AURA handles the rest.</p>
-      </div>
-      <div class="framework-cards">
-        <div class="fw-card">
-          <div class="fw-icon">&#9889;</div>
-          <h3>FastAPI</h3>
-          <p>Python</p>
-          <ul>
-            <li>main.py with app factory</li>
-            <li>routes.py with CRUD endpoints</li>
-            <li>Pydantic models</li>
-            <li>requirements.txt</li>
-          </ul>
+      <div class="section-label fade-up">Frameworks</div>
+      <h2 class="section-title fade-up">Say the name. Get the project.</h2>
+      <p class="section-sub fade-up">AURA auto-detects the framework from your task description.</p>
+      <div class="fw-grid">
+        <div class="fw-card fade-up">
+          <div class="fw-header">
+            <span class="fw-logo fastapi">F</span>
+            <div>
+              <h3>FastAPI</h3>
+              <span class="fw-lang">Python</span>
+            </div>
+          </div>
+          <div class="fw-files">
+            <div class="fw-file"><span class="file-dot green-dot"></span>main.py</div>
+            <div class="fw-file"><span class="file-dot green-dot"></span>routes.py</div>
+            <div class="fw-file"><span class="file-dot green-dot"></span>models.py</div>
+            <div class="fw-file"><span class="file-dot green-dot"></span>requirements.txt</div>
+          </div>
         </div>
-        <div class="fw-card">
-          <div class="fw-icon">&#128994;</div>
-          <h3>Express</h3>
-          <p>Node.js</p>
-          <ul>
-            <li>index.js with server setup</li>
-            <li>Route modules</li>
-            <li>Middleware &amp; CORS</li>
-            <li>package.json</li>
-          </ul>
+        <div class="fw-card fade-up delay-1">
+          <div class="fw-header">
+            <span class="fw-logo express">E</span>
+            <div>
+              <h3>Express</h3>
+              <span class="fw-lang">Node.js</span>
+            </div>
+          </div>
+          <div class="fw-files">
+            <div class="fw-file"><span class="file-dot yellow-dot"></span>index.js</div>
+            <div class="fw-file"><span class="file-dot yellow-dot"></span>routes/</div>
+            <div class="fw-file"><span class="file-dot yellow-dot"></span>middleware/</div>
+            <div class="fw-file"><span class="file-dot yellow-dot"></span>package.json</div>
+          </div>
         </div>
-        <div class="fw-card">
-          <div class="fw-icon">&#9883;</div>
-          <h3>React</h3>
-          <p>JavaScript</p>
-          <ul>
-            <li>src/App.js with components</li>
-            <li>Public directory &amp; HTML</li>
-            <li>CSS styling</li>
-            <li>package.json</li>
-          </ul>
+        <div class="fw-card fade-up delay-2">
+          <div class="fw-header">
+            <span class="fw-logo react">R</span>
+            <div>
+              <h3>React</h3>
+              <span class="fw-lang">JavaScript</span>
+            </div>
+          </div>
+          <div class="fw-files">
+            <div class="fw-file"><span class="file-dot blue-dot"></span>src/App.js</div>
+            <div class="fw-file"><span class="file-dot blue-dot"></span>src/index.js</div>
+            <div class="fw-file"><span class="file-dot blue-dot"></span>public/</div>
+            <div class="fw-file"><span class="file-dot blue-dot"></span>package.json</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── INTEGRATIONS ─── -->
-  <section class="integrations">
+  <!-- ─── WORKS WITH ─── -->
+  <section class="section section-alt">
     <div class="container">
-      <div class="section-header">
-        <h2>Use it your way</h2>
-        <p>AURA plugs into the tools you already use.</p>
-      </div>
-      <div class="integration-grid">
-        <div class="int-card">
+      <div class="section-label fade-up">Integrations</div>
+      <h2 class="section-title fade-up">Works with your tools</h2>
+      <p class="section-sub fade-up">AURA plugs into the ecosystem you already use.</p>
+      <div class="compat-grid">
+        <div class="compat-card fade-up">
+          <div class="compat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
           <h3>Claude Desktop</h3>
-          <p>Add AURA as an MCP server and scaffold projects by chatting with Claude.</p>
+          <p>Add as MCP server and scaffold by chatting.</p>
         </div>
-        <div class="int-card">
+        <div class="compat-card fade-up delay-1">
+          <div class="compat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
           <h3>Cursor IDE</h3>
-          <p>Call AURA's tools directly from Cursor's AI assistant.</p>
+          <p>Call AURA's tools from Cursor's AI assistant.</p>
         </div>
-        <div class="int-card">
+        <div class="compat-card fade-up delay-2">
+          <div class="compat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M9 4v16"/><path d="M4 9h5"/></svg>
+          </div>
           <h3>Notion</h3>
-          <p>Write a task in your database. AURA picks it up and builds it automatically.</p>
+          <p>Write a task. AURA picks it up and builds it.</p>
         </div>
-        <div class="int-card">
+        <div class="compat-card fade-up delay-3">
+          <div class="compat-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
           <h3>Any MCP Client</h3>
-          <p>AURA speaks the Model Context Protocol. Any compatible client works out of the box.</p>
+          <p>Standard protocol. Any client works.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ─── INSTALL ─── -->
-  <section id="install" class="install-section">
+  <section id="install" class="section">
     <div class="container">
-      <div class="section-header">
-        <h2>Get started in 30 seconds</h2>
-      </div>
-      <div class="install-card">
-        <div class="install-step">
-          <span class="install-label">Install</span>
-          <pre><code>pip install orkio</code></pre>
+      <div class="install-wrapper fade-up">
+        <div class="install-glow"></div>
+        <div class="section-label">Quick Start</div>
+        <h2 class="section-title">Up and running in 30 seconds</h2>
+        <div class="install-commands">
+          <div class="install-row">
+            <span class="install-tag">1</span>
+            <div class="install-code">
+              <code><span class="t-prompt">$</span> pip install orkio</code>
+            </div>
+          </div>
+          <div class="install-row">
+            <span class="install-tag">2</span>
+            <div class="install-code">
+              <code><span class="t-prompt">$</span> aura doctor</code>
+            </div>
+          </div>
+          <div class="install-row">
+            <span class="install-tag">3</span>
+            <div class="install-code">
+              <code><span class="t-prompt">$</span> aura start</code>
+            </div>
+          </div>
         </div>
-        <div class="install-step">
-          <span class="install-label">Verify</span>
-          <pre><code>aura doctor</code></pre>
+        <div class="install-links">
+          <a href="https://pypi.org/project/orkio/" target="_blank" rel="noopener">PyPI</a>
+          <span class="sep">&middot;</span>
+          <a href="https://github.com/aryanjsx/aura-mcp" target="_blank" rel="noopener">GitHub</a>
+          <span class="sep">&middot;</span>
+          <a href="https://github.com/aryanjsx/aura-mcp#api-documentation" target="_blank" rel="noopener">Documentation</a>
         </div>
-        <div class="install-step">
-          <span class="install-label">Run</span>
-          <pre><code>aura start</code></pre>
-        </div>
-      </div>
-      <div class="install-links">
-        <a href="https://pypi.org/project/orkio/" target="_blank" rel="noopener">PyPI</a>
-        <span class="link-sep">&middot;</span>
-        <a href="https://github.com/aryanjsx/aura-mcp" target="_blank" rel="noopener">GitHub</a>
-        <span class="link-sep">&middot;</span>
-        <a href="https://github.com/aryanjsx/aura-mcp#api-documentation" target="_blank" rel="noopener">Docs</a>
       </div>
     </div>
   </section>
@@ -235,13 +337,28 @@
   <!-- ─── FOOTER ─── -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-inner">
-        <p class="footer-brand">AURA MCP</p>
-        <p class="footer-copy">Open-source AI automation platform &middot; MIT License</p>
-        <p class="footer-author">Built by <a href="https://github.com/aryanjsx" target="_blank" rel="noopener">Aryan Kumar</a></p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-icon sm">A</span>
+          <span>AURA MCP</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/aryanjsx/aura-mcp" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://pypi.org/project/orkio/" target="_blank" rel="noopener">PyPI</a>
+          <a href="https://github.com/aryanjsx/aura-mcp#api-documentation" target="_blank" rel="noopener">Docs</a>
+          <a href="https://github.com/aryanjsx/aura-mcp/blob/master/LICENSE" target="_blank" rel="noopener">MIT License</a>
+        </div>
+        <p class="footer-copy">Built by <a href="https://github.com/aryanjsx" target="_blank" rel="noopener">Aryan Kumar</a></p>
       </div>
     </div>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
